@@ -68,7 +68,7 @@ input[type="radio"]{
 }
 th, td {
     margin-bottom: 5rem;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: aqua;
         padding: 10px;
         text-align: center;
@@ -94,6 +94,10 @@ img{
     margin: auto;
     display: flex;
     /* justify-content: center; */
+}
+th{
+    background-color: rgb(113, 113, 248);
+    color: rgb(223, 205, 173);
 }
 
 #avatar_all{
