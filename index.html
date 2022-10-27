@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Github</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./form.css">
+</head>
+
+<body>
+    <div class="main_container" id="input_username">
+
+
+        <h1>Welcome to GitHub search page</h1>
+        <div>
+            
+            <input type="radio" id="one_user" name="find_user" value="one" checked>
+            <label for="one_user">Find user by username</label>
+            <input type="radio" id="all" name="find_user" value="all">
+            <label for="all">Find user</label>
+        </div>
+        <div>
+
+            <div class="searchBox">
+
+                <input class="searchInput" type="text" id="search_username" placeholder="Search">
+
+                <button class="searchButton" id="search_username_btn">
+                    <i class="material-icons">
+                        Search
+                    </i>
+                </button>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="res">
+
+            <div id="results_username">
+                <h1>Profile</h1>
+                <br>
+                <img id="avatar">
+                <!-- <div> -->
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Username
+                            </th>
+                            <th>
+                                Followers
+                            </th>
+                            <th>
+                                Following
+                            </th>
+                            <th>
+                                Number of Reposotories
+                            </th>
+                            <th>
+                                Link
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body">
+
+
+                    </tbody>
+
+
+                </table>
+                <br>
+                <h1>Reposotories</h1>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Link
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="repo_body_table">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+        </div>
+        
+    <div class="all_res" id="all_results" >
+        
+        <h1>Results:</h1>
+        <br>
+        <table>
+            <tr>
+
+                <th>
+                    Picture
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Link
+                </th>
+            </tr>
+            <tbody id="all_repo">
+
+            </tbody>
+            </table>
+            <button id="prev">previus</button>
+            <button id="next">next</button>
+    </div>
+    <a href="#">Contact us</a>
+    </div>
+    
+    <script src="./fetch.js"></script>
+</body>
+
+</html>

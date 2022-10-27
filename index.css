@@ -1,0 +1,78 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", monospace;
+    
+}
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(34deg, rgba(200,228,255,1) 4%, rgba(126,135,245,1) 35%, rgba(49,102,241,1) 60%, rgba(18,58,161,1) 91%);    min-height: 100vh;
+  font-family: "Poppins",monospace;
+}
+.main_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+
+}
+/* .first_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+} */
+
+#avatar{
+    width: 240px;
+    border-radius: 15px;
+    height: 240px;
+    /* padding-top: 5rem; */
+    /* margin: auto; */
+    
+}
+
+.hidden{
+    display: none;
+}
+th, td {
+    margin-bottom: 5rem;
+    border-radius: 5px;
+    background-color: aqua;
+        padding: 10px;
+        text-align: center;
+      }
+
+table{
+    row-gap: 1rem;
+    column-gap: 1rem;
+  margin: auto;
+}
+
+.res{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+}
+img{
+    margin: auto;
+    display: flex;
+    /* justify-content: center; */
+}
+
+#avatar_all{
+    width: 150px;
+    height: 170 px;
+border-radius: 15px;
+}
+
