@@ -4,23 +4,26 @@ const input_username = document.getElementById("search_username")
 const input_username_form = document.getElementById("input_username")
 const results_username = document.getElementById("results_username")
 results_username.classList.add("hidden")
-// document.getElementById("all_results").classList.remove("hidden")
 document.getElementById("all_results").classList.add("hidden")
-
+const username = input_username.value;
 let counter = 1;
 document.getElementById("next").addEventListener("click",()=>{
+    document.getElementById("all_repo").innerHTML = ""
     counter++
-    search_user.click()
+    console.log("click");
+    all_results(input_username.value,counter)
 })
 document.getElementById("prev").addEventListener("click",()=>{
     if(counter >1) {
-
+        
+        document.getElementById("all_repo").innerHTML = ""
         counter--
-        search_user.click()
+        all_results(input_username.value,counter)
     }
     
 })
 
+document.getElementById("cover").addEventListener("click",()=> window.location.reload())
 search_user.addEventListener("click",()=>{
     results_username.classList.remove("hidden")
     if(search_user.value = ""){
@@ -32,16 +35,17 @@ console.log(document.getElementById("one_user").checked);
 console.log(document.getElementById("all").checked);
             document.getElementById("table_body").innerHTML = ""
             document.getElementById("repo_body_table").innerHTML = ""
-            fetching(input_username.value)
+            fetching(input_username.value,counter)
             
-            input_username.value = ""
+            // input_username.value = ""
         }
         else if(document.getElementById("all").checked == true){
             document.getElementById("all_results").classList.remove("hidden")
             results_username.classList.add("hidden")
-
-
+            
+            
             all_results(input_username.value,counter)
+            // input_username.value = ""
         }
         else window.location.reload()
     }
@@ -111,26 +115,29 @@ const all_results = (username,counter) =>{
     fetch(`https://api.github.com/search/users?q=${username}&per_page=10&page=${counter}`)
     .then((resolve)=> resolve.json())
 .then((data)=>{
+    document.getElementById("pages").innerHTML = `${counter*10}/${data.total_count} results `
     console.log(data.items);
+    console.log(data.total_count);
+    console.log(username);
     data.items.forEach(element =>{
         const obj= {
             username : element.login,
             link : element.html_url,
             avatar: element.avatar_url
-
+            
         }
-            document.getElementById("all_repo").innerHTML +=`
-            <tr> 
+        document.getElementById("all_repo").innerHTML +=`
+        <tr> 
             <td> <img id="avatar_all" src="${obj.avatar}"></td>
             
             <td>${obj.username} </td>
             
             <td ><a href="${obj.link}" target="_blank" >${obj.link} </a> </td>
-
+            
             </tr>
             `
+        })
+        
+        
     })
-
-
-})
 }
