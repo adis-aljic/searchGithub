@@ -106,3 +106,18 @@ th{
 border-radius: 15px;
 }
 
+@media (max-width : 480px){
+   
+    .radio{
+        display: flex;
+        justify-content: center;
+        padding-left: 2rem;
+    }
+   
+    #repo_body_table{
+        max-width: fit-content;
+      
+    }
+   
+   
+}

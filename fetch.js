@@ -25,14 +25,15 @@ document.getElementById("prev").addEventListener("click",()=>{
 
 document.getElementById("cover").addEventListener("click",()=> window.location.reload())
 search_user.addEventListener("click",()=>{
+    
+    
     results_username.classList.remove("hidden")
     if(search_user.value = ""){
         window.location.reload()
     }
     else{
         if(document.getElementById("one_user").checked == true) {
-console.log(document.getElementById("one_user").checked);
-console.log(document.getElementById("all").checked);
+
             document.getElementById("table_body").innerHTML = ""
             document.getElementById("repo_body_table").innerHTML = ""
             fetching(input_username.value,counter)
